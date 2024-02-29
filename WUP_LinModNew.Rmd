@@ -81,11 +81,12 @@ The p-value is (0.0000000000000022) 02.2e-16 (which is <0.05) showing that arm s
 #### Predict at target point
 
 ```{r}
-simspredict = predict(model.1,newdata = data.frame(ARM=88, GRIP=94))
+simspredict = predict(model.1,newdata = data.frame(ARM=88, GRIP=94), interval = "confidence")
 print(simspredict)
 ```
 
 The prediction for ARM=88 and GRIP=94 is 0.71
+
 
 #### scatterplot with model fit
   
@@ -94,6 +95,7 @@ plot(SIMS~ARM,data=data)
 abline(model.1, col=("red"))
 ```
 
+This is a scatterplot with a fuction plot in it. At ARM strength=88 the 95% confidence interval is between 0.49 and 0.92. 
 
 
 ## Model 2 SIM~GRIP
